@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::get('profiles', function()
+{
+	return Profile::all();	
+});
+
+Route::post('profiles', function() 
+{
+	return Profile::create(Input::all());
 });
